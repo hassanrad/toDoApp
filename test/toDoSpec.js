@@ -18,11 +18,22 @@ describe('to do', function(){
 
   it('should store a task', function(){
     todo.addTask('eat breakfast');
-    expect(todo.tasks.pop()).to.contain.all.keys({'task': 'eat breakfast'});
+    expect(todo.tasks).to.contain({'task': 'eat breakfast', 'complete': false});
   });
 
   it('should define tasks are incomplete by default', function() {
     todo.addTask('eat breakfast');
-    expect(todo.tasks.pop()).to.contain.all.keys({'complete': false});
+    expect(todo.tasks).to.contain({'task': 'eat breakfast', 'complete': false});
+  });
+
+  it('should store multiple tasks', function(){
+    todo.addTask('eat breakfast');
+    todo.addTask('take a shower');
+    expect(todo.tasks).to.contain({'task': 'eat breakfast', 'complete': false});
+    expect(todo.tasks).to.contain({'task': 'take a shower', 'complete': false});
+  });
+
+  it('should display HTML list of contained tasks', function(){
+    expect(todo.displayTasks).to.include('<ul><li><div>Eat breakfast</div></li></ul>');
   });
 });
