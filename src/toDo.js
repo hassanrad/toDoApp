@@ -7,6 +7,10 @@ function ToDo() {
 ToDo.prototype = {
   tasks: function() {
     return this.tasks;
+  },
+
+  addTask: function(task) {
+    this.tasks.push({'task': task, 'complete': false});
   }
 };
 
