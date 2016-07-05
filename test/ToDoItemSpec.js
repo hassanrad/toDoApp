@@ -1,9 +1,6 @@
 var expect = require("chai").expect;
 var ToDoItem = require("../src/todoitem");
 
-
-
-
   describe('ToDoItem', function(){
 
   var toDoItem;
