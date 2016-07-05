@@ -1,13 +1,24 @@
 var expect = require("chai").expect;
 var ToDoList = require("../src/todolist");
+var ToDoItem = require("../src/todoitem");
 
 describe('To Do List', function() {
 
-  it('initializes with an empty array of to do items', function(){
-    var toDoList = new ToDoList();
-    expect(toDoList.itemList).to.be.empty;
+  beforeEach(function(){
+    toDoList = new ToDoList();
   });
 
-  it('stores a new task')
+  describe('#itemList', function(){
+    it('initializes with an empty array of to do items', function(){
+      expect(toDoList.itemList).to.be.empty;
+    });
+  });
 
+  describe('#addItem', function(){
+    it('stores a new task', function(){
+      var item = new ToDoItem('Eat Breakfast');
+      toDoList.addItem(item)
+      expect(toDoList.itemList[0].task).to.equal('Eat Breakfast')
+    });
+  });
 });
