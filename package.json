@@ -7,8 +7,7 @@
     "test":"mocha --recursive"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fahmahmood/further-javascript.git"
+    "type": "git"
   },
   "author": "Faisal Mahmood <fahmahmood@gmail.com>",
   "license": "ISC",
