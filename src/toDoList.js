@@ -1,11 +1,11 @@
-'use strict';
+
 
 var Mustache = require('mustache');
 var Task = require('./Task');
 
 function ToDoList() {
   this._tasks = [];
-};
+}
 
 ToDoList.prototype = {
   returnTasks: function() {
@@ -17,19 +17,25 @@ ToDoList.prototype = {
     this._tasks.push(task);
   },
 
+  taskNames: function() {
+    return this._tasks.map(function(item,index) {
+      return item.name;
+    });
+
+  },
   displayTasks: function() {
+
+
     var view = {
-      task: function() {
-        for(var i=0; i<this._tasks.length; i++) {
-          return this._tasks[i];
-        }
-      }
-    };
-    var template = '<ul><li><div>{{task}}</div></li></ul>';
-    var output = Mustache.render(template, view);
-    console.log(task);
+      'taskNames': this.taskNames(),
+      'taskStatus': 'false'
+    }
+
+    var template = '<ul><li><div>{{#taskNames}}{{.}}{{/taskNames}}: {{#taskStatus}}{{.}}{{/taskStatus}}</div></li></ul>';
+    var output = Mustache.to_html(template, view);
+
     return output;
-  }
+}
 };
 
 module.exports = ToDoList;

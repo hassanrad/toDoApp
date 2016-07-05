@@ -5,9 +5,15 @@ var expect = require('chai').expect;
 var ToDoList = require('../src/toDoList');
 var Task = require('../src/Task');
 
-describe('to do', function(){
+describe('to do list', function(){
   var todolist = new ToDoList();
   var task = new Task('eat breakfast');
+
+
+    it('should display HTML list of contained tasks', function(){
+      todolist.addTask('eat breakfast');
+      expect(todolist.displayTasks()).to.include('<ul><li><div>eat breakfast: false</div></li></ul>');
+    });
 
   it('should create a new instance of itself', function(){
     expect(todolist).to.be.an.instanceof(ToDoList);
@@ -34,8 +40,6 @@ describe('to do', function(){
     expect(todolist.returnTasks()).to.include({name: 'take a shower', isComplete: false});
   });
 
-  it('should display HTML list of contained tasks', function(){
-    todolist.addTask('eat breakfast');
-    expect(todolist.displayTasks).to.include('<ul><li><div>Eat breakfast</div></li></ul>');
-  });
+
+  // it('should ')
 });
