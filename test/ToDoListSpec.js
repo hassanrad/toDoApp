@@ -6,6 +6,8 @@ describe('To Do List', function() {
 
   beforeEach(function(){
     toDoList = new ToDoList();
+    item1 = new ToDoItem('Eat Breakfast');
+    item2 = new ToDoItem('Run');
   });
 
   describe('#itemList', function(){
@@ -16,9 +18,16 @@ describe('To Do List', function() {
 
   describe('#addItem', function(){
     it('stores a new task', function(){
-      var item = new ToDoItem('Eat Breakfast');
-      toDoList.addItem(item)
+      toDoList.addItem(item1)
       expect(toDoList.itemList[0].task).to.equal('Eat Breakfast')
+    });
+  });
+
+  describe('#showNames', function(){
+    it('shows the names', function(){
+      toDoList.addItem(item1)
+      toDoList.addItem(item2)
+      expect(toDoList.showNames()).to.eql(['Eat Breakfast', 'Run'])
     });
   });
 });
