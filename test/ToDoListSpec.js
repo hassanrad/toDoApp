@@ -31,8 +31,8 @@ describe('To Do List', function() {
     });
   });
 
-  describe('render', function(){
-    it('renders the page in html', function(){
+  describe('#render', function(){
+    it('renders a list in html', function(){
       toDoList.addItem(item1)
       toDoList.addItem(item2)
       expect(toDoList.render()).to.equal("<ul><li>Eat Breakfast</li><li>Run</li></ul>")
