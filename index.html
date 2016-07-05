@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="src/toDoList.js"></script>
+  <script type="text/javascript" src="src/Task.js"></script>
+  <script type="text/javascript" src="node_modules/mustache/mustache.js"></script>
+  <script>
+    var todolist = new ToDoList();
+
+    todolist.addTask('eat breakfast');
+    todolist.addTask('take a shower');
+
+    var taskList = todolist.displayTasks();
+    document.getElementById('tasklist').innerHTML = taskList;
+  </script>
+</head>
+<body>
+<h1 id='title'>To Do List</h1>
+<div id="tasklist"></div>
+
+</body>
+</html>

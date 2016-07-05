@@ -9,7 +9,6 @@ describe('to do list', function(){
   var todolist = new ToDoList();
   var task = new Task('eat breakfast');
 
-
     it('should display HTML list of contained tasks', function(){
       todolist.addTask('eat breakfast');
       expect(todolist.displayTasks()).to.include('<ul><li><div>eat breakfast: false</div></li></ul>');

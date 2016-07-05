@@ -1,8 +1,8 @@
-'use strict';
+// 'use strict';
 
-function Task(name) {
+(function Task(name) {
   this.name = name;
   this.isComplete = false;
-};
+})();
 
-module.exports = Task;
+// module.exports = Task;
