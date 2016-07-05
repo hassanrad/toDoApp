@@ -16,7 +16,6 @@ var ToDoItem = require("../src/todoitem");
 
     describe('#viewTask', function() {
       it('should be able to view tasks', function() {
-
         toDoItem.setTask('Breakfast')
         expect(toDoItem.viewTask()).to.equal('Breakfast');
       });
