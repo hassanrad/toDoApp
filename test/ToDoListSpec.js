@@ -30,4 +30,12 @@ describe('To Do List', function() {
       expect(toDoList.showNames()).to.eql(['Eat Breakfast', 'Run'])
     });
   });
+
+  describe('render', function(){
+    it('renders the page in html', function(){
+      toDoList.addItem(item1)
+      toDoList.addItem(item2)
+      expect(toDoList.render()).to.equal("<ul><li>Eat Breakfast</li><li>Run</li></ul>")
+    });
+  });
 });

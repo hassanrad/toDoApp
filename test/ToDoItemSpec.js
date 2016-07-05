@@ -32,7 +32,6 @@ var ToDoItem = require("../src/todoitem");
       it('marks a complete task', function(){
         toDoItem.completeTask();
         expect(toDoItem.complete).to.equal(true)
-
       });
     });
   });
