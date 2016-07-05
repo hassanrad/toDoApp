@@ -19,7 +19,7 @@ describe('To Do List', function() {
   describe('#addItem', function(){
     it('stores a new task', function(){
       toDoList.addItem(item1)
-      expect(toDoList.itemList[0].task).to.equal('Eat Breakfast')
+    expect(toDoList.itemList[0].task).to.equal('Eat Breakfast')
     });
   });
 
@@ -27,7 +27,7 @@ describe('To Do List', function() {
     it('shows the names', function(){
       toDoList.addItem(item1)
       toDoList.addItem(item2)
-      expect(toDoList.showNames()).to.eql(['Eat Breakfast', 'Run'])
+    expect(toDoList.showNames()).to.eql(['Eat Breakfast', 'Run'])
     });
   });
 
@@ -35,7 +35,7 @@ describe('To Do List', function() {
     it('renders a list in html', function(){
       toDoList.addItem(item1)
       toDoList.addItem(item2)
-      expect(toDoList.render()).to.equal("<ul><li>Eat Breakfast</li><li>Run</li></ul>")
+    expect(toDoList.render()).to.equal("<ul><li>Eat Breakfast</li><li>Run</li></ul>")
     });
   });
 });

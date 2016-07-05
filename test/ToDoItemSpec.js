@@ -3,11 +3,8 @@ var ToDoItem = require("../src/todoitem");
 
   describe('ToDoItem', function(){
 
-  var toDoItem;
-
   beforeEach(function(){
-  toDoItem = new ToDoItem('Eat breakfast');
-
+    toDoItem = new ToDoItem('Eat breakfast');
   });
 
     describe('#setTask', function(){
