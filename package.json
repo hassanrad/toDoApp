@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
-    "start": "node node_modules/http-server/bin/http-server"
+    "start": "node server.js"
+
   },
   "repository": {
     "type": "git"
