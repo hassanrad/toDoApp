@@ -3,16 +3,16 @@ function ToDoItem(task){
   this.complete = false;
 }
 
-ToDoItem.prototype.setTask = function(task){
-  this.task = task
-}
-
-ToDoItem.prototype.viewTask = function(){
-  return this.task
-}
-
-ToDoItem.prototype.completeTask = function(){
-  this.complete = true
+ToDoItem.prototype = {
+  setTask: function(task){
+    this.task = task
+  },
+  viewTask: function(){
+    return this.task
+  },
+  completeTask: function(){
+    this.complete = true
+  }
 }
 
 module.exports = ToDoItem
