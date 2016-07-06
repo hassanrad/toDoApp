@@ -25,9 +25,10 @@ describe('Webpage', function() {
 
   it('adds a task using the form', function(){
     assert.ok(this.browser.success);
-    this.browser
-      .fill('task', 'buy eggs')
-      .pressButton('Submit');
-    this.browser.assert.status(0);
+    this.browser.fill('task', 'buy eggs');
+    this.browser.pressButton('Submit')
+    this.browser.assert.text('li', 'buy eggs');
   });
 });
+
+//   this.browser.assert.text('li', 'Eat Breakfast');

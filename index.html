@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
     <script src="node_modules/mustache/mustache.js"></script>
     <script src="src/toDoItem.js"></script>
     <script src="src/toDoList.js"></script>
@@ -12,11 +11,9 @@
     <h1> Tasks </h1>
     <ul id='list'>
     </ul>
-    <form id="addTask" action="/" method="post">
       Task
-      <input type="text" name="task" placeholder="new task">
-      <input type="submit" value="Submit">
-    </form>
+      <input id="hello" type="text" name="task" placeholder="new task">
+      <button id='addTask' onclick="addTask()" value="Submit">Add Task</button>
   </body>
   <script src="index.js"></script>
 </html>
