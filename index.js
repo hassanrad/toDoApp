@@ -1,7 +1,6 @@
 window.onload = function() {
-list = new ToDoList();
-list.addItem('Run');
-list.addItem('Go Shopping');
+list = new ToDoList(ToDoItem, Mustache);
+list.addItem('Eat Breakfast');
 
 var output = list.render();
 console.log(output);
