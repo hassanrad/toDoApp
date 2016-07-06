@@ -15,4 +15,4 @@ ToDoItem.prototype = {
   }
 }
 
-module.exports = ToDoItem
+// module.exports = ToDoItem
