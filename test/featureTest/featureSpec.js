@@ -14,13 +14,20 @@ describe('Webpage', function() {
     this.browser.visit('/', done);
   });
 
-  it('displays the correct title', function(done){
+  it('displays the correct title', function(){
     assert.ok(this.browser.success);
     assert.equal(this.browser.text('title'), 'To Do List');
-    done();
   });
 
-  it('displays the tasks on the page', function(){
-    this.browser.assert.text('li', 'Eat Breakfast');
+  // it('displays the tasks on the page', function(){
+  //   this.browser.assert.text('li', 'Eat Breakfast');
+  // });
+
+  it('adds a task using the form', function(){
+    assert.ok(this.browser.success);
+    this.browser
+      .fill('task', 'buy eggs')
+      .pressButton('Submit');
+    this.browser.assert.status(0);
   });
 });
