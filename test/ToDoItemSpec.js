@@ -24,7 +24,7 @@ var ToDoItem = require("../src/todoitem").ToDoItem;
     describe('#completeTask', function(){
       it('marks a complete task', function(){
         toDoItem.completeTask();
-        expect(toDoItem.complete).to.equal(true)
+        expect(toDoItem.complete).to.equal('completed')
       });
     });
   });

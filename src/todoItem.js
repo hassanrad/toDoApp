@@ -1,7 +1,7 @@
 (function(exports) {
   function ToDoItem(task){
     this.task = task;
-    this.complete = false;
+    this.complete = 'not completed';
   }
 
   ToDoItem.prototype = {
@@ -12,7 +12,7 @@
       return this.task
     },
     completeTask: function(){
-      this.complete = true
+      this.complete = 'completed';
     }
   }
   exports.ToDoItem = ToDoItem;

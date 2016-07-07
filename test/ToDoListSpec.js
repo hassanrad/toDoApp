@@ -30,11 +30,30 @@ describe('To Do List', function() {
     });
   });
 
+  describe('#showStatus', function(){
+    it('shows the status', function(){
+      toDoList.addItem('Eat Breakfast')
+      expect(toDoList.showStatus()).to.eql(['not completed'])
+    });
+  });
+
+  describe ("#changeStatus", function(){
+    it('changes the status', function(){
+      toDoList.addItem('Eat Breakfast')
+      toDoList.changeStatus('Eat Breakfast')
+      expect(toDoList.showStatus()).to.eql(['completed'])
+    });
+  });
   describe('#render', function(){
     it('renders a list in html', function(){
       toDoList.addItem('Eat Breakfast')
-      toDoList.addItem('Run')
-      expect(toDoList.render()).to.equal("<li>Eat Breakfast</li><li>Run</li>")
+      console.log(toDoList.itemList)
+      expect(toDoList.render()).to.equal("<li>Eat Breakfast - not completed</li>")
+    });
+    it('renders a list of completed items in html', function(){
+      toDoList.addItem('Eat Breakfast')
+      toDoList.changeStatus('Eat Breakfast')
+      expect(toDoList.render()).to.equal("<li>Eat Breakfast - completed</li>")
     });
   });
 });
