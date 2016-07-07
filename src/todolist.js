@@ -37,7 +37,7 @@
           return this.complete
         }
       }
-      var template = '{{#tasks}}<li>{{name}} - {{status}}</li>{{/tasks}}';
+      var template = '{{#tasks}}<li><input type ="checkbox" id="check" name="{{name}}" value="{{name}}">{{name}} - {{status}}</li>{{/tasks}}';
       var html = this.Mustache.to_html(template, view);
       console.log(html)
       return html

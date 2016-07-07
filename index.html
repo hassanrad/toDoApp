@@ -11,20 +11,20 @@
     <h1> Tasks </h1>
     <ul id='list'>
     </ul>
-    <!-- <form action='/task/new' method='post'> -->
       <input id='task' type="text" name="task"> </input>
       <button id='addTask' onclick="addTask()" value="Add Task">Add Task</input>
-    <!-- </form> -->
   </body>
 <script src="index.js"></script>
 <script>
   document.getElementById('addTask').onclick = function addTask(){
-    // evt.preventDefault();
     toDoList.addItem(document.getElementById('task').value);
     var output = toDoList.render();
     console.log(output);
     document.getElementById('list').innerHTML = output;
   }
-  // document.getElementById('submit').addEventListener('click', stopSubmit);
+  // The code below is not functional yet, it's for the checkbox
+  document.getElementById('check').checked = function changeStatus(){
+    toDoList.changeStatus()
+  }
 </script>
 </html>

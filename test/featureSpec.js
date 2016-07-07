@@ -20,13 +20,16 @@ describe('Webpage', function() {
     done();
   });
 
-  // it('displays the tasks on the page', function(){
-  //   this.browser.assert.text('li', 'Eat breakfast');
-  // });
-
   it('displays new task on the page', function(){
     this.browser.fill('task', 'Run');
-    this.browser.pressButton('Add Task')
-    this.browser.assert.text('li', 'Run - not completed')
+    this.browser.pressButton('Add Task');
+    this.browser.assert.text('li', 'Run - not completed');
+  });
+
+  it('completes a selected task', function(){
+    this.browser.fill('task', 'Run');
+    this.browser.pressButton('Add Task');
+    this.browser.check('Run');
+    this.browser.assert.text('li', 'Run - completed');
   });
 });
