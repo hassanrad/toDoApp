@@ -1,21 +1,26 @@
-var server = require("http-server").createServer();
-var assert = require('assert');
+var http = require("http-server")
 var Browser = require('zombie');
+var assert = require('assert');
+var expect = require('chai').expect;
 
-describe('contact page', function() {
-  server.listen(2000);
-  browser = new Browser({ site: 'http://localhost:2000' });
+describe('Webpage', function() {
 
-  beforeEach(function(done) {
-  browser.visit('/', done);
-});
+  before(function() {
+    this.server = http.createServer().listen(8080);
+    this.browser = new Browser({ site: 'http://localhost:8080' });
+  });
 
-it('has an index page', function() {
-  browser.assert.status(200);
-});
+  before(function(done) {
+    this.browser.visit('/', done);
+  });
 
-// it('dispays a to-do list', function() {
-//   browser.assert.text('#tasks', 'Eat Breakfast');
-// // });
+  it('displays the correct title', function(done){
+    assert.ok(this.browser.success);
+    assert.equal(this.browser.text('title'), 'To Do List');
+    done();
+  });
 
+  it('displays the tasks on the page', function(){
+    this.browser.assert.text('li', 'Eat breakfast');
+  });
 });

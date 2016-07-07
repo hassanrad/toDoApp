@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var ToDoItem = require("../src/todoitem");
+var ToDoItem = require("../src/todoitem").ToDoItem;
 
   describe('ToDoItem', function(){
 
