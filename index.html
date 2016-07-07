@@ -11,6 +11,16 @@
     <h1> Tasks </h1>
     <ul id='list'>
     </ul>
+    <form action='/task/new' method='post'>
+      <input type="text" name="task">
+      <input id='submit' type="submit" value="Submit">
+    </form>
   </body>
 <script src="index.js"></script>
+<script>
+  function stopSubmit(evt){
+    evt.preventDefault();
+  }
+  document.getElementById('submit').addEventListener('click', stopSubmit);
+</script>
 </html>
