@@ -11,16 +11,19 @@
     <h1> Tasks </h1>
     <ul id='list'>
     </ul>
-    <form action='/task/new' method='post'>
-      <input type="text" name="task">
-      <input id='submit' type="submit" value="Submit">
-    </form>
+    <!-- <form action='/task/new' method='post'> -->
+      <input id='task' type="text" name="task"> </input>
+      <button id='addTask' onclick="addTask()" value="Add Task">Add Task</input>
+    <!-- </form> -->
   </body>
 <script src="index.js"></script>
 <script>
-  function stopSubmit(evt){
-    evt.preventDefault();
+  document.getElementById('addTask').onclick = function addTask(){
+    // evt.preventDefault();
+    toDoList.addItem(document.getElementById('task').value);
+    var output = toDoList.render();
+    document.getElementById('list').innerHTML = output;
   }
-  document.getElementById('submit').addEventListener('click', stopSubmit);
+  // document.getElementById('submit').addEventListener('click', stopSubmit);
 </script>
 </html>
