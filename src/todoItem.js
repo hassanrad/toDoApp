@@ -1,15 +1,17 @@
 (function(exports) {
-  function ToDoItem(task){
-    this.task = task;
-    this.complete = 'not completed';
+  var idCount = 0;
+  function ToDoItem(taskName){
+    this.taskName = taskName;
+    this.complete = false;
+    this.taskID = idCount++;
   }
 
   ToDoItem.prototype = {
-    setTask: function(task){
-      this.task = task
+    setTask: function(taskName){
+      this.taskName = taskName;
     },
     viewTask: function(){
-      return this.task
+      return this.taskName;
     },
     completeTask: function(){
       this.complete = 'completed';

@@ -15,16 +15,4 @@
       <button id='addTask' onclick="addTask()" value="Add Task">Add Task</input>
   </body>
 <script src="index.js"></script>
-<script>
-  document.getElementById('addTask').onclick = function addTask(){
-    toDoList.addItem(document.getElementById('task').value);
-    var output = toDoList.render();
-    console.log(output);
-    document.getElementById('list').innerHTML = output;
-  }
-  // The code below is not functional yet, it's for the checkbox
-  document.getElementById('check').checked = function changeStatus(){
-    toDoList.changeStatus()
-  }
-</script>
 </html>

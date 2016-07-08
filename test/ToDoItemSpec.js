@@ -10,7 +10,7 @@ var ToDoItem = require("../src/todoitem").ToDoItem;
     describe('#setTask', function(){
       it ('can set tasks', function(){
         toDoItem.setTask('Breakfast')
-        expect(toDoItem.task).to.equal('Breakfast')
+        expect(toDoItem.taskName).to.equal('Breakfast')
       });
     });
 
